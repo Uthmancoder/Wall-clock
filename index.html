@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+        <main>
+            <div class="clock">
+                <div class="hours"></div>
+                <div class="minutes"></div>
+                <div id="seconds" class="seconds"></div>
+                <div class="bfore"></div>
+
+                <div class="numberone" number="1">1</div>
+                <div class="numbertwo" number="2">2</div>
+                <div class="numberthree"  number="3">3</div>
+                <div class="numberfour" number="4">4</div>
+                <div class="numberfive" number="5">5</div>
+                <div class="numbersix" number="6">6</div>
+                <div class="numberseven" number="7">7</div>
+                <div class="numbereight" number="8">8</div>
+                <div class="numbernine" number="9">9</div>
+                <div class="numberten" number="10">10</div>
+                <div class="numbereleven">11</div>
+                <div class="numbertwelve" number="12">12</div>
+               
+
+            </div>
+
+            <p id="screen"></p>
+        </main>
+
+    <script>
+        let hoursEl = document.querySelector(".hours")
+        let minEl = document.querySelector(".minutes")
+        let secEl = document.querySelector(".seconds")
+
+        setInterval(() => {
+            const date = new Date;
+            // console.log(date);
+            let secDeg = date.getSeconds()/ 60 * 360 - 90;
+           let minDeg = date.getMinutes()/ 60 * 360 - 90;
+           let hourDeg = date.getHours()/12 * 360 - 90;
+           secEl.style.transform = `rotate(${secDeg}deg)`
+           minEl.style.transform = `rotate(${minDeg}deg)`
+           hoursEl.style.transform = `rotate(${hourDeg}deg)`
+        }, 1000);
+    </script>
+</body>
+
+</html>
